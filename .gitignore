@@ -71,4 +71,6 @@ yarn-debug.log*
 # Editor settings
 .idea/
 
+# Ignore credentials keys
 /config/credentials/*.key
+!/config/credentials/development.key
