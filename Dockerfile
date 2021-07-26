@@ -1,4 +1,4 @@
-FROM ruby:2.6.6-slim
+FROM ruby:2.7.3-slim
 RUN apt-get update && apt-get install -y --fix-missing \
   build-essential \
   curl \
@@ -14,7 +14,7 @@ ENV INSTALL_PATH /api
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 COPY Gemfile $INSTALL_PATH/Gemfile
-COPY Gemfile.lock $INSTALL_PATH/Gemfile.lock
+#COPY Gemfile.lock $INSTALL_PATH/Gemfile.lock
 RUN bundle install
 COPY . $INSTALL_PATH
 
